@@ -1,0 +1,23 @@
+Git files
+.git/
+.gitignore
+
+Docker files
+Dockerfile
+.dockerignore
+
+Virtual environment
+venv/
+.venv/
+
+Python cache
+pycache/
+*.pyc
+
+IDE-specific files
+.idea/
+.vscode/
+
+Local MLflow runs and data (these should be mounted as volumes)
+mlruns/
+data/
