@@ -1,0 +1,31 @@
+# config/config.yaml
+
+# File paths
+data:
+  raw_path: "data/raw/creditcard.csv"
+  train_path: "data/processed/train.csv"
+  test_path: "data/processed/test.csv"
+
+model:
+  save_path: "trained_models/model.joblib"
+  target_column: "Class"
+  test_size: 0.2
+  random_state: 42
+  
+  # Parameters for different models
+  xgboost:
+    n_estimators: 100
+    learning_rate: 0.1
+    max_depth: 3
+    # Crucial for imbalanced datasets!
+    scale_pos_weight: 10 # Example value, needs tuning
+
+  random_forest:
+    n_estimators: 100
+    max_depth: 10
+    # Also crucial for imbalanced datasets!
+    class_weight: "balanced"
+
+evaluation:
+  # The probability threshold to classify as fraud
+  probability_threshold: 0.5
